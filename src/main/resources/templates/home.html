@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>NTTDATA CLIENTES</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+		<body class="card-body">
+		<div class="card text-white bg-dark mb-3">
+		  <div class="card-header">Nuevo Cliente.</div>
+		  <div class="card-body">
+				<form th:action="@{./addCustomer}" th:object="${Customer}" method="POST">
+					<div class="form-group">
+			  			<label for="inpCustomerName">Nombre</label>
+			  			<input type="text" required="required" class="form-control" id="inpTName" name="name" placeholder="Añada un nombre">
+			  		</div>
+			  		<div class="form-group">
+			  			<label for="inpCustomerSurname1">Apellido</label>
+			  			<input type="text" required="required" class="form-control" id="inpTSN1" name="surName1" placeholder="Añada un apellido">
+			  		</div>
+			  		<div class="form-group">
+			  			<label for="inpCustomerSurname2">Apellido 2</label>
+			  			<input type="text" required="required" class="form-control" id="inpTSN2" name="surName2" placeholder="Añada otro apellido">
+			  		</div>
+			  		<div class="form-group">
+			  			<label for="inpCustomerIdentityDocNumber">DNI</label>
+			  			<input type="text" required="required" class="form-control" id="inpTDni" name="identityDocNumber" placeholder="Añada un DNI">
+					</div>
+					<button type="submit" name="btnSaveCustomer" class="btn btn-success">Añadir</button>
+				</form>
+				
+				  </div>
+				  
+				  <button onclick="location.href='./showCustomers'" name="btnSaveCustomer" class="btn btn-info">Enseñar todos los Clientes</button>
+				  
+			</div>
+				
+				<div class="card text-white bg-dark mb-3">
+		  <div class="card-header">Buscar Cliente por nombre.</div>
+		  <div class="card-body">
+				<form th:action="@{./searchCustomers}" th:object="${Customer}" method="POST">
+					<div class="form-group">
+			  			<label for="inpCustomerName">Nombre</label>
+			  			<input type="text" required="required" class="form-control" id="inpTName" name="name" placeholder="Introduzca un nombre">
+			  		</div>
+					<button type="submit" name="btnSearchCustomer" class="btn btn-primary">Buscar</button>
+				</form>
+				
+				  </div>
+				
+				</div>
+				
+				
+				<div class="card text-white bg-dark mb-3">
+		  <div class="card-header">Actualizar Cliente.</div>
+		  <div class="card-body">
+				<form th:action="@{./updateCustomer}" th:object="${Customer}" method="POST">
+					<div class="form-group">
+			  			<label for="inpCustomerCustomerId">Id del cliente</label>
+			  			<input type="text" required="required" class="form-control" id="inpTCustomerId" name="customerId" placeholder="Pon el id">
+			  		</div>
+					<div class="form-group">
+			  			<label for="inpCustomerName">Nombre</label>
+			  			<input type="text" required="required" class="form-control" id="inpTName" name="name" placeholder="Añada un nombre">
+			  		</div>
+			  		<div class="form-group">
+			  			<label for="inpCustomerSurname1">Apellido</label>
+			  			<input type="text" required="required" class="form-control" id="inpTSN1" name="surName1" placeholder="Añada un apellido">
+			  		</div>
+			  		<div class="form-group">
+			  			<label for="inpCustomerSurname2">Apellido 2</label>
+			  			<input type="text" required="required" class="form-control" id="inpTSN2" name="surName2" placeholder="Añada otro apellido">
+			  		</div>
+			  		<div class="form-group">
+			  			<label for="inpCustomerIdentityDocNumber">DNI</label>
+			  			<input type="text" required="required" class="form-control" id="inpTDni" name="identityDocNumber" placeholder="Añada un DNI">
+					</div>
+					<button type="submit" name="btnUpdateCustomer" class="btn btn-primary">Actualizar</button>
+				</form>
+				
+				  
+				
+				
+			  </div>
+			</div>
+	</body>
+</html>
